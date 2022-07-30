@@ -7,7 +7,7 @@ with open("README.md", 'r') as f:
     long_description = f.read()
 
 setup(
-   name='df2fixtures',
+   name='df2fixture',
    version='0.1',
    description='DataFrame to test fixture converter',
    license="MIT",
@@ -17,7 +17,7 @@ setup(
    author_email='dmitry.stw@gmail.com',
    url="https://github.com/pulsarcomet/df2fixture",
    #download_url = '',
-   packages=['Watermarkd'],
+   packages=['df2fixture'],
    keywords = ['pandas', 'pytest', 'fixtures'],
    classifiers=[
        "Development Status :: 3 - Alpha",
@@ -28,7 +28,8 @@ setup(
    ],
 
    install_requires=[
-       #'pillow',
+       'pandas',
+       'numpy'
    ],
 
    python_requires='>=3.6'
