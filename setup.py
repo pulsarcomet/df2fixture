@@ -8,7 +8,7 @@ with open("README.md", 'r') as f:
 
 setup(
    name='df2fixture',
-   version='0.1',
+   version='0.2',
    description='DataFrame to test fixture converter',
    license="MIT",
    long_description=long_description,
