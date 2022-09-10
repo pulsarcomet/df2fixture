@@ -134,7 +134,6 @@ class Test_BaseGenerator():
     def test_generate_compress_column(self, config_compressible: dict):
         generator = BaseGenerator()
         actual = generator.generate('case1', config_compressible)
-        print('===============\n'+actual+'\n===============')
         expected = textwrap.dedent('''\
         # automatically generated file, do not edit!
 
