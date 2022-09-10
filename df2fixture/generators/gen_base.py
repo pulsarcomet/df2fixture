@@ -6,16 +6,23 @@ import re
 
 from pandas.api.types import is_datetime64_any_dtype
 from tqdm import tqdm
-from yapf.yapflib.yapf_api import FormatCode
+import autopep8
 
 import importlib
 import sys
 
 class BaseGenerator:
 
+    # TODO put it into config
     ISO_DATE_FORMAT = '%Y-%m-%d'
 
     def is_datetime(self, val: t.Any) -> bool:
+        '''
+        Test if given series or array is all of datetime kind
+
+        :param val: pd.Series or np.ndarray
+        :return: True if all items are datetime, False otherwise
+        '''
         if type(val) in (np.ndarray, pd.Series):
             if val.dtype == object:
                 val = val.fillna(pd.to_datetime('1970-01-01'))
@@ -86,7 +93,7 @@ class BaseGenerator:
             src += f'    {varname}: {vartype} = {data}\n'
 
         src += f'    return {varname}\n'
-        text, changed = FormatCode(src, style_config='pep8')
+        text: str = autopep8.fix_code(src)
         return text
 
     def generate(self, case_name: str, config: dict) -> str:
