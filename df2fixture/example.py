@@ -9,13 +9,11 @@ from .generators import BaseGenerator
 
 from df2fixture.mappers.mappers import IdMapper
 
-RANDOM_STATE = 11
-
 
 """Parse arguments."""
 parser = argparse.ArgumentParser(
     prog='fixtures generator',
-    description='automatic fixtures generator from actual db'
+    description='Automatic fixtures generator'
 )
 
 parser.add_argument('--name', type=str, required=True, metavar='name', help='Testcase name')
