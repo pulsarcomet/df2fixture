@@ -32,20 +32,31 @@ with open('tests/sample_test.py', 'w') as f:
 
 ```bash
 $ git clone https://github.com/pulsarcomet/df2fixture
-$ cd  df2fixture
+$ cd df2fixture
 ```
 
-### Create virtualenv
-Make sure python >= 3.9 version is installed!
+### pip
+
+#### Create virtualenv
+Make sure python >= 3.8 version is installed!
 ```bash
 $ sudo apt-get install virtualenv
 $ vistualenv venv --python python3
 $ pip install -r requirements.txt
 ```
-
-### Activate virtualenv
+#### Activate virtualenv
 ```bash
 $ . venv/bin/activate
+```
+
+### conda
+#### Create env
+```bash
+$ conda env create -f environment.yml
+```
+#### Activate conda env
+```bash
+$ conda activate conda-dfx-env
 ```
 
 ### Run tests
