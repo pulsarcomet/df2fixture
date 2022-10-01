@@ -1,4 +1,4 @@
-name: conda-env
+name: conda-dfx-env
 channels:
   - defaults
   - conda-forge
