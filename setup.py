@@ -3,12 +3,14 @@
 import setuptools
 from setuptools import setup
 
+from df2fixture import __version__
+
 with open("README.md", 'r') as f:
     long_description = f.read()
 
 setup(
    name='df2fixture',
-   version='0.2',
+   version=__version__,
    description='DataFrame to test fixture converter',
    license="MIT",
    long_description=long_description,
@@ -23,14 +25,15 @@ setup(
        "Development Status :: 3 - Alpha",
        "Intended Audience :: Developers",
        "Programming Language :: Python :: 3",
-       "License :: OSI Approved :: Apache Software License",
+       "License :: MIT",
        "Operating System :: OS Independent",
    ],
 
    install_requires=[
        'pandas',
-       'numpy'
+       'numpy',
+       'pytest'
    ],
 
-   python_requires='>=3.6'
+   python_requires='>=3.7'
 )
