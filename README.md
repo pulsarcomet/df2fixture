@@ -38,7 +38,7 @@ $ cd df2fixture
 ### pip
 
 #### Create virtualenv
-Make sure python >= 3.8 version is installed!
+Make sure python >= 3.7 version is installed!
 ```bash
 $ sudo apt-get install virtualenv
 $ vistualenv venv --python python3

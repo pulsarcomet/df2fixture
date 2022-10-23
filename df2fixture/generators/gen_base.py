@@ -31,6 +31,7 @@ class BaseGenerator:
                 return is_datetime64_any_dtype(val)
         elif type(val) == pd.Timestamp:
             return True
+        return False
 
     def format_scalar(self, scalar: t.Any) -> str:
         if self.is_datetime(scalar):
@@ -38,8 +39,8 @@ class BaseGenerator:
         return f"'{scalar}'" if type(scalar) == str else str(scalar)
 
     def format_column(self, column: pd.Series, compress: bool = True) -> str:
-        data = ''
-        new_column: pd.Series = column
+        data: str
+        new_column: pd.Series
         is_dt: bool = self.is_datetime(column)
 
         if is_dt:
